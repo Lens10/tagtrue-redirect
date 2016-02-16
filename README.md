@@ -7,8 +7,8 @@ domain.
 It uses [Rack::Rewrite](https://github.com/jtrupiano/rack-rewrite) to redirect:
 
 ```
-staging.tagtrue.com     https://staging.datatrue.com/
-*                       https://datatrue.com/
+staging.tagtrue.com     https://staging.datatrue.com/?via=tagtrue-redirect
+*                       https://datatrue.com/?via=tagtrue-redirect
 ```
 
 The path is preserved across redirects but the [query string](https://github.com/jtrupiano/rack-rewrite#keeping-your-querystring) is not.
