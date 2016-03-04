@@ -4,14 +4,14 @@ This is a light-weight, high-performing rack application whose sole purpose is
 to redirect requests from the legacy `tagtrue.com` domains to the new `datatrue.com`
 domain.
 
-It uses [Rack::Rewrite](https://github.com/jtrupiano/rack-rewrite) to redirect:
+It uses [Rack::Rewrite](https://github.com/jtrupiano/rack-rewrite) to redirect, e.g.:
 
 ```
 staging.tagtrue.com     https://staging.datatrue.com/?via=tagtrue-redirect
 *                       https://datatrue.com/?via=tagtrue-redirect
 ```
 
-The path is preserved across redirects but the [query string](https://github.com/jtrupiano/rack-rewrite#keeping-your-querystring) is not.
+The path is preserved across redirects but the [query string](https://github.com/jtrupiano/rack-rewrite#keeping-your-querystring) is not.  Find the latest redirects in [config.ru](config.ru)
 
 It runs in Heroku under tagtrue-redirect.herokuapp.com.
 
@@ -32,7 +32,7 @@ For better performance you should increase the default number of processes and t
 ## Performance
 
 I ran some [Apache Bench](https://httpd.apache.org/docs/2.2/programs/ab.html) tests against this application
-and it handled around 100 reqs/s for https and 200 reqs/s for https.  The hosting costs in Heroku are USD 27/mo ($20 for the SSL add-on, $7 for the hobby Dyno).
+and it handled around 100 reqs/s for https and 200 reqs/s for http.  The hosting costs in Heroku are USD 27/mo ($20 for the SSL add-on, $7 for the hobby Dyno).
 
 ## Development
 
